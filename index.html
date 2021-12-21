@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Personal</title>
+    <style>
+        /* Custom properties/variables  */
+        :root {
+            --main-white: #f0f0f0;
+            --main-red: #be3144;
+            --main-blue: #45567d;
+            --main-gray: #303841;
+        }
+
+        /*Resetear la base*/
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /*box-sizing y font-sizing*/
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        html {
+            box-sizing: border-box;
+            /*Asigna font size para facilitar los calculos REM
+             *Tamaño de fuente por default del documento =16px, 1rem=16px
+             *(100% / 16px)*10 = 62.5%, 1rem = 10px, 62.5% = 10px;
+             */
+            font-size: 65.5;
+            scroll-behavior: smooth;
+        }
+
+        /*Unas pocas medya query para asignar algunos tamaños 
+         * de fuente para diferentes tamaños de pantalla
+         *Esto ayuda a automatizar un poco de responividad
+         *El truco es para usar el Rem para valores de tamaño, margin y padding.
+         *Por que REM es relativo para el ta,año de fuente del documento.
+         *Esto va afectar todas las propiedades que usen unidades rem para los valores
+         */
+
+        /*Yo estoy usando unidades EM para los breakpoints
+         *El calculo es el siguinete
+         *El tamaño de pantalla dividido bpr el tamaño fuente base del navegador
+          * Por ejemplo: Un breakpoint a los 980px 
+         *980px / 16px = 61.5em
+         */
+
+        /*1200px / 16px = 75em*/
+        @media(max-width: 75em) {
+            html {
+                font-size: 60%;
+            }
+        }
+
+        /*980px / 16px = 61.25em*/
+        @media(max-width: 61.25em) {
+            html {
+                font-size: 58%;
+            }
+        }
+
+        /*460px / 16px = 28.75em*/
+        @media(max-width: 28.75em) {
+            html {
+                font-size: 55%;
+            }
+        }
+
+
+        /*Estilos Base*/
+        body {
+            font-family: 'Popins', sans-serif;
+            font-size: 1.8rem;
+            /*18px*/
+            font-weight: 400;
+            line-height: 1.4;
+            color: var(--main-white);
+        }
+
+        h1, h2 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--main-white);
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+
+
+
+        .projects-section {
+            text-align: center;
+            padding: 1rem 2rem;
+            background: var(--main-blue);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-gap: 3rem;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 6rem;
+        }
+
+        .project {
+            background: var(--main-gray);
+            box-shadow: 1px 1px 2px blue;
+            border-radius: 2px;
+        }
+
+        .code {
+            color: var(--main-gray);
+            transition: color 0.3s ease-out;
+        }
+
+        .project:hover .code {
+            color: var(--main-red);
+        }
+
+        .project-title {
+            font-size: 2rem;
+        }
+
+
+        .project-image {
+            height: calc(100% -6.8rem);
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .projects-section-header {
+            max-width: 640px;
+            margin: 1rem auto;
+            border-bottom: 0.2rem solid var(--main-white);
+        }
+    </style>
+</head>
+
+<body>
+    <section id="projects" class="projects-section">
+
+
+        <h2 class="projects-section-header">Mis increibles proyectos</h2>
+
+
+        <div class="project-grid">
+
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+                    alt="projecto uno">
+                <p class="project-title">
+                    <span class="code">&lt;</span>
+                    Projecto uno
+                    <span class="code">&#47;&gt;</span>
+                </p>
+            </a>
+
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+                    alt="projecto uno">
+                <p class="project-title">
+                    Projecto uno
+                </p>
+            </a>
+
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+                    alt="projecto uno">
+                <p class="project-title">
+                    Projecto uno
+                </p>
+            </a>
+
+            <a class="project" href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank">
+                <img class="project-image" src="https://cdn.freecodecamp.org/testable-projects-fcc/images/tribute.jpg"
+                    alt="projecto uno">
+                <p class="project-title">
+                    Projecto uno
+                </p>
+            </a>
+        </div>
+    </section>
+
+</body>
+
+</html>
